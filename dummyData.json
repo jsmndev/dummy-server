@@ -110,5 +110,173 @@
         "hour": "Closed"
       }
     ]
+  },
+  {
+    "id": 1,
+    "name": "Business Inc.",
+    "address": "500 St.",
+    "city": "Townsville",
+    "phoneNumber": "123-456-7890",
+    "licenseNumber": "12-123-12-12345",
+    "state": "TX",
+    "zipCode": "75036",
+    "enabled": false,
+    "preferred": false,
+    "associatedFees": [
+      {
+        "feeOn": "Handgun",
+        "feeAmount": "$12"
+      },
+      {
+        "feeOn": "Rifle",
+        "feeAmount": "$15"
+      },
+      {
+        "feeOn": "Shotgun",
+        "feeAmount": "$17"
+      }
+    ],
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Tuesday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Wednesday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Thursday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Friday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Saturday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Sunday",
+        "hour": "Closed"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Business Inc.",
+    "address": "500 St.",
+    "city": "Townsville",
+    "phoneNumber": "123-456-7890",
+    "licenseNumber": "12-123-12-12345",
+    "state": "TX",
+    "zipCode": "75036",
+    "enabled": false,
+    "preferred": false,
+    "associatedFees": [
+      {
+        "feeOn": "Handgun",
+        "feeAmount": "$12"
+      },
+      {
+        "feeOn": "Rifle",
+        "feeAmount": "$15"
+      },
+      {
+        "feeOn": "Shotgun",
+        "feeAmount": "$17"
+      }
+    ],
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Tuesday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Wednesday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Thursday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Friday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Saturday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Sunday",
+        "hour": "Closed"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Business Inc.",
+    "address": "500 St.",
+    "city": "Townsville",
+    "phoneNumber": "123-456-7890",
+    "licenseNumber": "12-123-12-12345",
+    "state": "TX",
+    "zipCode": "75036",
+    "enabled": false,
+    "preferred": false,
+    "associatedFees": [
+      {
+        "feeOn": "Handgun",
+        "feeAmount": "$12"
+      },
+      {
+        "feeOn": "Rifle",
+        "feeAmount": "$15"
+      },
+      {
+        "feeOn": "Shotgun",
+        "feeAmount": "$17"
+      }
+    ],
+    "hoursOfOperation": [
+      {
+        "day": "Monday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Tuesday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Wednesday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Thursday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Friday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Saturday",
+        "hour": "900-1700"
+      },
+      {
+        "day": "Sunday",
+        "hour": "Closed"
+      }
+    ]
   }
 ]
