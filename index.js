@@ -15,7 +15,7 @@ app.get("/dealers", (_, res) => {
 });
 
 app.post("/import", (req, res) => {
-  res.send('Success')
+  res.send(req.body)
 });
 
 app.put("/dealers/:id", (req, res) => {
