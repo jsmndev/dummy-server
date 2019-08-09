@@ -14,6 +14,10 @@ app.get("/dealers", (_, res) => {
   res.status(200).json(dealers);
 });
 
+app.post("/import", (req, res) => {
+  res.send({result:"Success"});
+});
+
 app.put("/dealers/:id", (req, res) => {
   const { id } = req.params;
   const dealerIndex = dealers.findIndex(d => d.id == id);
