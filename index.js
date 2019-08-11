@@ -8,14 +8,14 @@ let dealers = require("./dummyData.json");
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (_, res) => res.send("Hello"));
+app.get("/", (_, res) => res.send("<h1>Mock server for FFL</h1>"));
 
 app.get("/dealers", (_, res) => {
   res.status(200).json(dealers);
 });
 
 app.post("/import", (req, res) => {
-  res.send({result:"Success"});
+  res.send({ result: "Success" });
 });
 
 app.put("/dealers/:id", (req, res) => {
