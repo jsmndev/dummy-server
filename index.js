@@ -14,6 +14,12 @@ app.get("/dealers", (_, res) => {
   res.status(200).json(dealers);
 });
 
+app.get("/export", (req, res) => {
+  res.setHeader("Content-disposition", "attachment; filename=dealers.txt");
+  res.set("Content-Type", "text/plain");
+  res.status(200).end("Testing downloading data");
+});
+
 app.post("/import", (req, res) => {
   res.send({ result: "Success" });
 });
