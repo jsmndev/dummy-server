@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 const cors = require("cors");
+const Json2csvParser = require("json2csv").Parser;
 
 let dealers = require("./dummyData.json");
 
@@ -14,10 +15,29 @@ app.get("/dealers", (_, res) => {
   res.status(200).json(dealers);
 });
 
-app.get("/export", (req, res) => {
-  res.setHeader("Content-disposition", "attachment; filename=dealers.txt");
-  res.set("Content-Type", "text/plain");
-  res.status(200).end("Testing downloading data");
+app.get("/export", (_, res) => {
+  // Convert JSON to CSV data
+  const csvFields = [
+    "id",
+    "name",
+    "address",
+    "city",
+    "phoneNumber",
+    "licenseNumber",
+    "state",
+    "zipCode",
+    "enabled",
+    "preferred",
+    "associatedFees",
+    "hoursOfOperation"
+  ];
+  const json2csvParser = new Json2csvParser({ csvFields });
+  const csvData = json2csvParser.parse(dealers);
+
+  // Send CSV File to Client
+  res.setHeader("Content-disposition", "attachment; filename=dealers.csv");
+  res.set("Content-Type", "text/csv");
+  res.status(200).end(csvData);
 });
 
 app.post("/import", (req, res) => {
