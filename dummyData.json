@@ -8,8 +8,8 @@
     "licenseNumber": "12-123-12-12345",
     "state": "TX",
     "zipCode": "75036",
-    "enabled": false,
-    "preferred": false,
+    "enabled": true,
+    "preferred": true,
     "associatedFees": [
       {
         "feeOn": "Handgun",
@@ -176,7 +176,7 @@
     "licenseNumber": "12-123-12-12345",
     "state": "TX",
     "zipCode": "75036",
-    "enabled": false,
+    "enabled": true,
     "preferred": false,
     "associatedFees": [
       {
@@ -232,7 +232,7 @@
     "licenseNumber": "12-123-12-12345",
     "state": "TX",
     "zipCode": "75036",
-    "enabled": false,
+    "enabled": true,
     "preferred": false,
     "associatedFees": [
       {
