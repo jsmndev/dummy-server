@@ -21,7 +21,6 @@ app.get("/dealers/:id", (req, res) => {
   if (dealer) {
     res.status(200).json(dealer);
   } else {
-    console.log("DEALER", dealer);
     res
       .status(404)
       .json({ id: Number(req.params.id), message: "Dealer not found" });
