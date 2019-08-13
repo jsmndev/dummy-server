@@ -59,7 +59,7 @@ app.put("/dealers/:id", (req, res) => {
 
     res.json({
       id: id,
-      message: `Dealer updated!`
+      message: "Dealer updated!"
     });
   } else {
     res.status(404).json({ msg: "Dealer not found" });
