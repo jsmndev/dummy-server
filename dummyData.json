@@ -5,12 +5,12 @@
     "address": "500 St.",
     "city": "Townsville",
     "phoneNumber": "123-456-7890",
-    "licenseNumber": "12-123-12-12345",
+    "license": "12-123-12-12345",
     "state": "TX",
-    "zipCode": "75036",
+    "zip": "75036",
     "enabled": true,
     "preferred": true,
-    "associatedFees": [
+    "fees": [
       {
         "feeName": "Handgun",
         "feeAmount": "$12"
@@ -24,34 +24,34 @@
         "feeAmount": "$17"
       }
     ],
-    "hoursOfOperation": [
+    "businessHours": [
       {
         "day": "Monday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Tuesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Wednesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Thursday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Friday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Saturday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Sunday",
-        "hour": "Closed"
+        "hours": "Closed"
       }
     ]
   },
@@ -61,12 +61,12 @@
     "address": "404 St.",
     "city": "Not Found",
     "phoneNumber": "010-101-1010",
-    "licenseNumber": "12-321-12-54321",
+    "license": "12-321-12-54321",
     "state": "CA",
-    "zipCode": "91381",
+    "zip": "91381",
     "enabled": false,
     "preferred": false,
-    "associatedFees": [
+    "fees": [
       {
         "feeName": "Handgun",
         "feeAmount": "$12"
@@ -80,34 +80,34 @@
         "feeAmount": "$17"
       }
     ],
-    "hoursOfOperation": [
+    "businessHours": [
       {
         "day": "Monday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Tuesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Wednesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Thursday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Friday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Saturday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Sunday",
-        "hour": "Closed"
+        "hours": "Closed"
       }
     ]
   },
@@ -117,12 +117,12 @@
     "address": "500 St.",
     "city": "Townsville",
     "phoneNumber": "123-456-7890",
-    "licenseNumber": "12-123-12-12345",
+    "license": "12-123-12-12345",
     "state": "TX",
-    "zipCode": "75036",
+    "zip": "75036",
     "enabled": false,
     "preferred": false,
-    "associatedFees": [
+    "fees": [
       {
         "feeName": "Handgun",
         "feeAmount": "$12"
@@ -136,34 +136,34 @@
         "feeAmount": "$17"
       }
     ],
-    "hoursOfOperation": [
+    "businessHours": [
       {
         "day": "Monday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Tuesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Wednesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Thursday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Friday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Saturday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Sunday",
-        "hour": "Closed"
+        "hours": "Closed"
       }
     ]
   },
@@ -173,12 +173,12 @@
     "address": "500 St.",
     "city": "Townsville",
     "phoneNumber": "123-456-7890",
-    "licenseNumber": "12-123-12-12345",
+    "license": "12-123-12-12345",
     "state": "TX",
-    "zipCode": "75036",
+    "zip": "75036",
     "enabled": true,
     "preferred": false,
-    "associatedFees": [
+    "fees": [
       {
         "feeName": "Handgun",
         "feeAmount": "$12"
@@ -192,34 +192,34 @@
         "feeAmount": "$17"
       }
     ],
-    "hoursOfOperation": [
+    "businessHours": [
       {
         "day": "Monday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Tuesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Wednesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Thursday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Friday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Saturday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Sunday",
-        "hour": "Closed"
+        "hours": "Closed"
       }
     ]
   },
@@ -229,12 +229,12 @@
     "address": "500 St.",
     "city": "Townsville",
     "phoneNumber": "123-456-7890",
-    "licenseNumber": "12-123-12-12345",
+    "license": "12-123-12-12345",
     "state": "TX",
-    "zipCode": "75036",
+    "zip": "75036",
     "enabled": true,
     "preferred": false,
-    "associatedFees": [
+    "fees": [
       {
         "feeName": "Handgun",
         "feeAmount": "$12"
@@ -248,34 +248,34 @@
         "feeAmount": "$17"
       }
     ],
-    "hoursOfOperation": [
+    "businessHours": [
       {
         "day": "Monday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Tuesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Wednesday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Thursday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Friday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Saturday",
-        "hour": "900-1700"
+        "hours": "900-1700"
       },
       {
         "day": "Sunday",
-        "hour": "Closed"
+        "hours": "Closed"
       }
     ]
   }
