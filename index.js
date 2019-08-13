@@ -58,7 +58,7 @@ app.put("/dealers/:id", (req, res) => {
     ];
 
     res.json({
-      id: id,
+      id: dealer.id,
       message: "Dealer updated!"
     });
   } else {
