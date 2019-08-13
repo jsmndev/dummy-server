@@ -15,6 +15,19 @@ app.get("/dealers", (_, res) => {
   res.status(200).json(dealers);
 });
 
+app.get("/dealers/:id", (req, res) => {
+  const dealer = dealers.find(dealer => dealer.id == req.params.id);
+
+  if (dealer) {
+    res.status(200).json(dealer);
+  } else {
+    console.log("DEALER", dealer);
+    res
+      .status(404)
+      .json({ id: Number(req.params.id), message: "Dealer not found" });
+  }
+});
+
 app.get("/export", (_, res) => {
   // Convert JSON to CSV data
   const csvFields = [
@@ -59,7 +72,7 @@ app.put("/dealers/:id", (req, res) => {
 
     res.json({
       id: dealer.id,
-      message: "Dealer updated!"
+      message: "Dealer updated"
     });
   } else {
     res.status(404).json({ msg: "Dealer not found" });
