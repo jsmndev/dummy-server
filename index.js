@@ -57,7 +57,10 @@ app.put("/dealers/:id", (req, res) => {
       ...dealers.slice(dealerIndex + 1)
     ];
 
-    res.json(dealers);
+    res.json({
+      id: id,
+      message: `Dealer updated!`
+    });
   } else {
     res.status(404).json({ msg: "Dealer not found" });
   }
