@@ -54,7 +54,9 @@ app.get("/export", (_, res) => {
 });
 
 app.post("/import", (req, res) => {
-  res.send({ result: "Success" });
+  res.send(
+    { result: "Success" 
+    , body: req.body } );
 });
 
 app.put("/dealers/:id", (req, res) => {
