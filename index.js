@@ -56,13 +56,13 @@ app.post("/import", (req, res) => {
   res.send({ result: "Success" });
 });
 
-app.put("/dealers/:id", (req, res) => {
+app.patch("/dealers/:id", (req, res) => {
   const { id } = req.params;
   const dealerIndex = dealers.findIndex(d => d.id == id);
 
   if (dealerIndex > -1) {
     const dealer = { ...dealers[dealerIndex], ...req.body };
-
+          
     dealers = [
       ...dealers.slice(0, dealerIndex),
       dealer,
