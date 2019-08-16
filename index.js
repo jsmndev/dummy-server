@@ -4,7 +4,7 @@ const port = process.env.PORT || 5000;
 const cors = require("cors");
 const Json2csvParser = require("json2csv").Parser;
 
-let dealers = require("./dummyData.json");
+let dealers = require("./dummyData100.json");
 
 app.use(express.json());
 app.use(cors());
