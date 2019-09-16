@@ -33,6 +33,9 @@ app.get("/export", (req, res) => {
   let newDealers = [];
 
   switch (filterBy) {
+    case "all":
+      newDealers = dealers;
+      break;
     case "enabled":
       newDealers = dealers.filter(dealer => dealer.enabled);
       break;
@@ -59,9 +62,9 @@ app.get("/export", (req, res) => {
       "address",
       "city",
       "phoneNumber",
-      "licenseNumber",
+      "license",
       "state",
-      "zipCode",
+      "zip",
       "enabled",
       "preferred",
       "fees",
