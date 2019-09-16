@@ -2,19 +2,55 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 const cors = require("cors");
+// For file export
 const Json2csvParser = require("json2csv").Parser;
+// For file import
+const multer = require('multer');
+// Folder to which the file has been saved
+const upload = multer({ dest: 'uploads/' });
+// csv file to json array
+const csvToJson = require('csvtojson');
 
 let dealers = require("./dummyData100.json");
 
+let importedDealers = [];
+
+// middlewares
 app.use(express.json());
 app.use(cors());
 
+// helper functions
+function cleanupJson(data) {
+  let newData = [];
+  for (let i = 0; i < data.length; i += 1) {
+    data[i].id = JSON.parse(data[i].id);
+    data[i].enabled = JSON.parse(data[i].enabled);
+    data[i].preferred = JSON.parse(data[i].preferred);
+    data[i].fees = JSON.parse(data[i].fees);
+    data[i].businessHours = JSON.parse(data[i].businessHours);
+    newData.push(data[i]);
+  }
+
+  return newData;
+}
+
+
+// ROUTES
+// This is just a test route
 app.get("/", (_, res) => res.send("<h1>Mock server for FFL</h1>"));
 
+// Fetch all dealers
 app.get("/dealers", (_, res) => {
-  res.status(200).json(dealers);
+  importedDealers = cleanupJson(importedDealers);
+
+  for (let i = 0; i < dealers.length; i += 1) {
+    console.log("DEALERS", dealers[i]);
+  }
+
+  res.status(200).json([...dealers, ...importedDealers]);
 });
 
+// Fetch a single dealer
 app.get("/dealers/:id", (req, res) => {
   const dealer = dealers.find(dealer => dealer.id == req.params.id);
 
@@ -27,6 +63,8 @@ app.get("/dealers/:id", (req, res) => {
   }
 });
 
+
+// Exports all the data
 app.get("/export", (_, res) => {
   // Convert JSON to CSV data
   const csvFields = [
@@ -52,10 +90,14 @@ app.get("/export", (_, res) => {
   res.status(200).end(csvData);
 });
 
-app.post("/import", (req, res) => {
-  res.send({ result: "Success" });
+// Upload data from local
+app.post("/import", upload.single("statement"), async (req, res) => {
+  let file = req.file;
+  importedDealers = await csvToJson().fromFile(file.path);
+  res.send({ message: "Uploaded file successfully!" });
 });
 
+// Updates a dealer
 app.patch("/dealers/:id", (req, res) => {
   const { id } = req.params;
   const dealerIndex = dealers.findIndex(d => d.id == id);
