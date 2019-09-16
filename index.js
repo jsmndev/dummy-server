@@ -27,29 +27,55 @@ app.get("/dealers/:id", (req, res) => {
   }
 });
 
-app.get("/export", (_, res) => {
-  // Convert JSON to CSV data
-  const csvFields = [
-    "id",
-    "name",
-    "address",
-    "city",
-    "phoneNumber",
-    "licenseNumber",
-    "state",
-    "zipCode",
-    "enabled",
-    "preferred",
-    "associatedFees",
-    "hoursOfOperation"
-  ];
-  const json2csvParser = new Json2csvParser({ csvFields });
-  const csvData = json2csvParser.parse(dealers);
+app.get("/export", (req, res) => {
+  // filterby enabled, disabled, preferred or not preferred
+  let filterBy = req.query.filterBy;
+  let newDealers = [];
 
-  // Send CSV File to Client
-  res.setHeader("Content-disposition", "attachment; filename=dealers.csv");
-  res.set("Content-Type", "text/csv");
-  res.status(200).end(csvData);
+  switch (filterBy) {
+    case "enabled":
+      newDealers = dealers.filter(dealer => dealer.enabled);
+      break;
+    case "preferred":
+      newDealers = dealers.filter(dealer => dealer.preferred);
+      break;
+    case "disabled":
+      newDealers = dealers.filter(dealer => !dealer.enabled);
+      break;
+    case "not preferred":
+      newDealers = dealers.filter(dealer => !dealer.preferred);
+      break;
+    default:
+      newDealers = [];
+  }
+
+  if (newDealers.length === 0) {
+    res.json({ message: "Invalid Filter" });
+  } else {
+    // Convert JSON to CSV data
+    const fields = [
+      "id",
+      "name",
+      "address",
+      "city",
+      "phoneNumber",
+      "licenseNumber",
+      "state",
+      "zipCode",
+      "enabled",
+      "preferred",
+      "fees",
+      "businessHours"
+    ];
+    const opts = { fields };
+    const json2csvParser = new Json2csvParser({fields});
+    const csvData = json2csvParser.parse(newDealers);
+
+    // Send CSV File to Client
+    res.setHeader("Content-disposition", "attachment; filename=dealers.csv");
+    res.set("Content-Type", "text/csv");
+    res.status(200).end(csvData);
+  } 
 });
 
 app.post("/import", (req, res) => {
