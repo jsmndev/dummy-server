@@ -68,7 +68,7 @@ app.get("/export", (req, res) => {
       "enabled",
       "preferred",
       "fees",
-      "businessHours"
+      "schedule"
     ];
     const opts = { fields };
     const json2csvParser = new Json2csvParser({fields});
