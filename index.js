@@ -32,7 +32,7 @@ app.get("/export", (req, res) => {
   let filterBy = req.query.filterBy;
   let newDealers = [];
 
-  switch (filterBy) {
+  switch (filterBy.toLowerCase()) {
     case "all":
       newDealers = dealers;
       break;
