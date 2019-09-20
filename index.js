@@ -11,10 +11,6 @@ app.use(cors());
 
 app.get("/", (_, res) => res.send("<h1>Mock server for FFL</h1>"));
 
-app.post("/import", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.json({ result: "Success" });
-});
 
 app.get("/dealers", (_, res) => {
   res.status(200).json(dealers);
@@ -30,6 +26,10 @@ app.get("/dealers/:id", (req, res) => {
       .status(404)
       .json({ id: Number(req.params.id), message: "Dealer not found" });
   }
+});
+
+app.post("/importFile", (_, res) => {
+  res.json({ result: "Success" });
 });
 
 app.get("/export", (req, res) => {
