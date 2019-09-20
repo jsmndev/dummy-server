@@ -82,7 +82,7 @@ app.get("/export", (req, res) => {
 });
 
 app.post("/import", (req, res) => {
-  res.send({ result: "Success" });
+  res.json({ result: "Success" });
 });
 
 app.patch("/dealers/:id", (req, res) => {
