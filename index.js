@@ -12,7 +12,7 @@ app.use(cors());
 app.get("/", (_, res) => res.send("<h1>Mock server for FFL</h1>"));
 
 app.post("/import", (req, res) => {
-  res.setHeaders("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
   res.json({ result: "Success" });
 });
 
