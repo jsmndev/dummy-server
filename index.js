@@ -28,7 +28,7 @@ app.get("/dealers/:id", (req, res) => {
   }
 });
 
-app.post("/importFile", (_, res) => {
+app.post("/import", (_, res) => {
   res.json({ result: "Success" });
 });
 
