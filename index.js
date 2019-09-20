@@ -84,7 +84,7 @@ app.get("/export", (req, res) => {
   } 
 });
 
-app.post("/import", (req, res) => {
+app.post("/import", cors(corsOptions), (req, res) => {
   res.json({ result: "Success" });
 });
 
