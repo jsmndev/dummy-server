@@ -5,12 +5,28 @@ const cors = require("cors");
 const Json2csvParser = require("json2csv").Parser;
 
 let dealers = require("./dummyData100.json");
-const corsOptions = {
-  origin: 'http://localhost:8080'
-}
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
+// Add headers
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
 
 app.get("/", (_, res) => res.send("<h1>Mock server for FFL</h1>"));
 
@@ -84,7 +100,7 @@ app.get("/export", (req, res) => {
   } 
 });
 
-app.post("/import", cors(corsOptions), (req, res) => {
+app.post("/import", (req, res) => {
   res.json({ result: "Success" });
 });
 
