@@ -6,7 +6,7 @@ const Json2csvParser = require("json2csv").Parser;
 
 let dealers = require("./dummyData100.json");
 const corsOptions = {
-  origin: 'http://localhost:8080/'
+  origin: 'http://localhost:8080'
 }
 
 app.use(express.json());
