@@ -7,9 +7,14 @@ const Json2csvParser = require("json2csv").Parser;
 let dealers = require("./dummyData100.json");
 
 app.use(express.json());
-app.use(cors({origin: '*'}));
+app.use(cors());
 
 app.get("/", (_, res) => res.send("<h1>Mock server for FFL</h1>"));
+
+app.post("/import", (req, res) => {
+  res.setHeaders("Access-Control-Allow-Origin", "*");
+  res.json({ result: "Success" });
+});
 
 app.get("/dealers", (_, res) => {
   res.status(200).json(dealers);
@@ -71,19 +76,14 @@ app.get("/export", (req, res) => {
       "schedules"
     ];
     const opts = { fields };
-    const json2csvParser = new Json2csvParser({fields});
+    const json2csvParser = new Json2csvParser({ fields });
     const csvData = json2csvParser.parse(newDealers);
 
     // Send CSV File to Client
     res.setHeader("Content-disposition", "attachment; filename=dealers.csv");
     res.set("Content-Type", "text/csv");
     res.status(200).end(csvData);
-  } 
-
-});
-
-app.post("/import", (req, res) => {
-  res.json({ result: "Success" });
+  }
 });
 
 app.patch("/dealers/:id", (req, res) => {
@@ -92,7 +92,7 @@ app.patch("/dealers/:id", (req, res) => {
 
   if (dealerIndex > -1) {
     const dealer = { ...dealers[dealerIndex], ...req.body };
-          
+
     dealers = [
       ...dealers.slice(0, dealerIndex),
       dealer,
