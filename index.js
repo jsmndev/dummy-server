@@ -7,10 +7,7 @@ const Json2csvParser = require("json2csv").Parser;
 let dealers = require("./dummyData100.json");
 
 app.use(express.json());
-app.use(cors({
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
-}));
+app.use(cors());
 
 app.get("/", (_, res) => res.send("<h1>Mock server for FFL</h1>"));
 
